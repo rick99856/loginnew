@@ -1,0 +1,6 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteBase /
+    RewriteCond $1 !^(index\.php|image|swf|uploads|js|css|assets|dist|robots\.txt|$)
+    RewriteRule ^(.*)$ /loginnew/index.php/$1 [L,QSA]
+</IfModule>
