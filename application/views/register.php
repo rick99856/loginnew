@@ -17,6 +17,7 @@
 		<font color="#BBFFEE" size="4"  face="monospace">電話：</font><input type="text" name="telephone" class="form-control" placeholder="Telphone"/> <br>
 		<font color="#BBFFEE" size="4"  face="monospace">地址：</font><input type="text" name="address" class="form-control" placeholder="Address"/> <br>
 		<font color="#BBFFEE" size="4"  face="monospace">備註：</font><textarea name="other" cols="45" rows="5" class="form-control" ></textarea> <br>
+		<font color="#BBFFEE" size="4"  face="monospace">信箱：</font><input type="text" name="email" class="form-control" placeholder="E-mail"/> <br>
 		<input type="submit" name="button"  class="btn btn-info btn-lg btn-block" value="確定" />
 		   			
 	</form>

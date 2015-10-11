@@ -1,9 +1,7 @@
-<?php session_start(); ?>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Logout extends CI_Controller {
+class Edit extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -27,13 +25,26 @@ class Logout extends CI_Controller {
     }
 	public function index()
 	{
-	unset($_SESSION['username']);
-		// echo 'logouting ......';
-		// echo '<meta http-equiv="refresh" CONTENT="1; url=www">';
-		$this->load->helper('url');
-		header("Location:".base_url()."www" );
+		$this->load->database();
+		$this->load->model('name_model');
+		// session_start();
+		// $this->load->view('abc');
+		$da = $this->name_model->edit_pr($_SESSION['username']);
+
+
+		// print_r($da);
+		$data['passwd'] = $da->result_array()[0]['passwd'];
+		$data['tel'] = $da->result_array()[0]['tel'];
+		$data['adds'] = $da->result_array()[0]['adds'];
+		$data['other'] = $da->result_array()[0]['other'];
+		$data['email'] = $da->result_array()[0]['email'];
+		print_r($_SESSION['username']);
+		print_r($da->result_array()[0]['username']);
+		$this->load->view('edit',$data);
+		// $this->text();
+
+	}
+	public function text(){
+		echo "123456";
 	}
 }
-
-
-?>

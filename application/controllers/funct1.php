@@ -35,15 +35,15 @@ class Funct1 extends CI_Controller {
 		switch ($text) {
 				case '1':
 					header("Location:".base_url()."register" );
-				// echo 
+				
 					break;
 
 				case '2':
-					$this->load->view('edit');
+					header("Location:".base_url()."edit" );
 					break;
 				
 				case '3':
-					$this->load->view('delete');
+					header("Location:".base_url()."delete" );
 					break;
 				default:
 					break;

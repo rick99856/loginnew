@@ -33,9 +33,32 @@ class Name_model extends CI_Model {
         $this->db->set('tel', $arr['telephone']);
         $this->db->set('adds', $arr['address']);
         $this->db->set('other', $arr['other']);
+        $this->db->set('email',$arr['email']);
 
         // $this->db->insert('login'); 
         if($this->db->insert('login')){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    function delete($id){
+        $result = $this->db->delete('login', array('username' => $id));
+        return $result;
+    }
+    function edit_pr($id){
+        $this->db->select("*"); 
+        $this->db->where("username",$id);
+        $query = $this->db->get('login');
+        return $query;
+    }
+
+
+    function edit_info($data){
+        $this->db->where('username', $_SESSION['username']);
+        if($this->db->update('login', $data)){
             return true;
         }
         else{

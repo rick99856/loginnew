@@ -1,9 +1,7 @@
-<?php session_start(); ?>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Logout extends CI_Controller {
+class Delete extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -27,13 +25,12 @@ class Logout extends CI_Controller {
     }
 	public function index()
 	{
-	unset($_SESSION['username']);
-		// echo 'logouting ......';
-		// echo '<meta http-equiv="refresh" CONTENT="1; url=www">';
-		$this->load->helper('url');
-		header("Location:".base_url()."www" );
+		// session_start();
+		// $this->load->view('abc');
+		$this->load->view('delete');
+		// $this->text();
+	}
+	public function text(){
+		echo "123456";
 	}
 }
-
-
-?>
