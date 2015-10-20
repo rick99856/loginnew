@@ -10,6 +10,7 @@ class Name_model extends CI_Model {
     	$this->db->select('*');
     	$this->db->where('username',$id);
     	$this->db->where('passwd',md5($pwd));
+        $this->db->where('status',1);
 		$query = $this->db->get('login');
 		return $query;
     }
@@ -34,6 +35,7 @@ class Name_model extends CI_Model {
         $this->db->set('adds', $arr['address']);
         $this->db->set('other', $arr['other']);
         $this->db->set('email',$arr['email']);
+        $this->db->set('key',md5($arr['id'].$arr['pw']));
 
         // $this->db->insert('login'); 
         if($this->db->insert('login')){
@@ -66,5 +68,34 @@ class Name_model extends CI_Model {
         }
     }
 
+    function reup($key){
+        $this->db->select('*');
+        $this->db->where('key',$key);
+        $query = $this->db->get('login');/*->result_array()['key'];*/
+        return $query;
+        // if($query->result_array()['status'] == 1){
+        //     return false;
+        // }
+        // else{
+        //     return true;
+        // }
+
+    }
+
+    function upstatus($key){
+
+        $this->db->set('status','1');
+        $this->db->where('key',$key);
+        
+        if($this->db->update('login')){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+
+    
 }
 ?>
