@@ -60,9 +60,10 @@ function sendmail($id,$mail){
         $this->email->subject("註冊認證");
         $this->email->set_mailtype("html");
         $web = '<a href="10.200.96.30/loginnew">首頁</a>';
-        $web2 = "localhost/loginnew/authenticate/auth/".$key;
+        $web2 = "192.168.137.178/loginnew/authenticate/auth/".$key;
 
-        $this->email->message("<a href='$web2'>首頁</a>");  
+        $this->email->message("<a href='$web2'>首頁</a>
+            <br>$web2");  
         if($this->email->send()){
             echo "成功寄送";
             return true;

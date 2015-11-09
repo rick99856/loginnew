@@ -25,21 +25,23 @@ class Authenticate extends CI_Controller {
        
         // print_r($status->result_array()->result_array()['status']);
         
-        if($status->result_array()[0]['status']==1){
+        if($status->result_array()[0]['status']==0){
             if($this->name_model->upstatus($key)){
                 echo "開通成功";
-                 header("Location:".base_url()."www" );
-
+                // header("Location:".base_url()."www" );
+                header("Refresh: 5; url=".base_url()."www");
             }
             else{
                 echo "認證失敗";
-                 header("Location:".base_url()."www" );
+                // header("Location:".base_url()."www" );
+                header("Refresh: 5; url=".base_url()."www");
 
             }
         }
         else{
             echo "認證無效";
-             header("Location:".base_url()."www" );
+            // header("Location:".base_url()."www" );
+            header("Refresh: 5; url=".base_url()."www");
         }
         
 

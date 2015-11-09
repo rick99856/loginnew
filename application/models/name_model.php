@@ -35,7 +35,7 @@ class Name_model extends CI_Model {
         $this->db->set('adds', $arr['address']);
         $this->db->set('other', $arr['other']);
         $this->db->set('email',$arr['email']);
-        $this->db->set('key',md5($arr['id'].$arr['pw']));
+        $this->db->set('key',md5($arr['id'].$arr['email']));
 
         // $this->db->insert('login'); 
         if($this->db->insert('login')){
