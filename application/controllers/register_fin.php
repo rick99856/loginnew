@@ -24,7 +24,7 @@ class Register_fin extends CI_Controller {
 					$this->name_model->register($arr);
 
 					echo '註冊成功但是必須開通喔';
-					echo '<meta http-equiv="refresh" CONTENT="1; url=www">';
+					// echo '<meta http-equiv="refresh" CONTENT="1; url=www">';
 				}
 				else{
 					echo "error";
@@ -50,7 +50,7 @@ function sendmail($id,$mail){
         $config["smtp_pass"]    = "zx0956950105";              //SMTP 密碼
         $config["charset"]      = "utf-8";
         $config["newline"]      = "\r\n";                     // 换行(使用 "\r\n" to 以遵守RFC 822).
-        $config["mailtype"]     = "text";                     // text 或 html
+        $config["mailtype"]     = "html";                     // text 或 html
         $config["validation"]   = TRUE;                       // 是否驗證郵件位址      
         $this->email->initialize($config);
         $this->email->from("s13113241@stu.edu.tw", "Administrator");
@@ -60,11 +60,12 @@ function sendmail($id,$mail){
         $this->email->subject("註冊認證");
         $this->email->set_mailtype("html");
         $web = '<a href="10.200.96.30/loginnew">首頁</a>';
-        $web2 = "192.168.137.178/loginnew/authenticate/auth/".$key;
+        $web2 = "https://192.168.137.178/loginnew/authenticate/auth/".$key;
 
-        $this->email->message("<a href='$web2'>首頁</a>
+        $this->email->message("<a href='http://www.yahoo.com.tw' target = '_blank'>首頁網站</a>
             <br>$web2");  
         if($this->email->send()){
+            echo $this->email->print_debugger();
             echo "成功寄送";
             return true;
         } else {
