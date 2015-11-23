@@ -20,7 +20,7 @@ class www2 extends CI_Controller {
 					echo '<meta http-equiv="refresh" CONTENT="1; url=member">';
 				}
 				else{
-					echo "帳號密碼輸入錯誤或市長號並未開通";
+					echo "帳號密碼輸入錯誤或是帳號並未開通";
 					echo '<meta http-equiv="refresh" CONTENT="1; url=www">';
 				}
 			}
