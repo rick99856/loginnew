@@ -45,6 +45,9 @@ class Funct1 extends CI_Controller {
 				case '3':
 					header("Location:".base_url()."delete" );
 					break;
+				case '4':
+					header("Location:".base_url()."message" );
+					break;
 				default:
 					break;
 			}	

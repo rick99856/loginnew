@@ -21,7 +21,10 @@
 
 		
 		<button type="button" class="btn btn-info btn-sm col-md-offset-4 name="buttons" style="
-    	width: 200;" onclick='location.href="funct1/text/1"'>新增</button>"
+    	width: 200;" onclick='location.href="funct1/text/1"'>新增</button>&nbsp;&nbsp;
+
+    	<button type="button" class="btn btn-danger btn-sm col-md-offset-4 name="buttons" style="
+    	width: 200;" onclick='location.href="funct1/text/4"'>新增</button>
 		
 	
 
