@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Funct1 extends CI_Controller {
+class Forgetpwd extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -25,35 +25,12 @@ class Funct1 extends CI_Controller {
     }
 	public function index()
 	{
-		$this->text();
-		
-		
+		// session_start();
+		// $this->load->view('abc');
+		$this->load->view('forgetpwd');
+		// $this->text();
 	}
-	public function text($text){
-		// print_r($text);
-		$this->load->helper('url');
-		switch ($text) {
-				case '1':
-					header("Location:".base_url()."register" );
-				
-					break;
-
-				case '2':
-					header("Location:".base_url()."edit" );
-					break;
-				
-				case '3':
-					header("Location:".base_url()."delete" );
-					break;
-				case '4':
-					header("Location:".base_url()."message1" );
-					break;
-				case '5':
-					header("Location:".base_url()."forgetpwd" );
-					break;
-				default:
-					break;
-			}	
-		
+	public function text(){
+		echo "123456";
 	}
 }

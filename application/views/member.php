@@ -7,8 +7,8 @@
 </head>
 <body background="image/320988.jpg" style="background-repeat: no-repeat;background-size:cover;">
     <div class="col-md-6 col-md-offset-3">
-        <div class="col-md-8 col-md-offset-4">
-            <img src="https://cdn3.iconfinder.com/data/icons/mixed-3d-icons/512/VIP_icon_3D-128.png" ><br>
+        <div class="col-md-6 col-md-offset-4">
+            <img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-id-128.png" ><br>
         </div>
      
         <table class="table table-hover">

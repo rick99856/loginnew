@@ -13,6 +13,7 @@ class Member extends CI_Controller {
     }
 	public function index()
 	{
+		// print_r( $this->text());
 		$result = $this->text()->result_array();
 		$view = "";
 		for($i = 0; $i<count($result);$i++){
@@ -24,6 +25,7 @@ class Member extends CI_Controller {
             $view .= "</tr>";
 		}
 		$data['view'] = $view;
+		
 		$this->load->view('member',$data);
 		$this->load->view('button');
 		
@@ -32,6 +34,7 @@ class Member extends CI_Controller {
 		$this->load->database();
 		$this->load->model('name_model');
 		return $this->name_model->infos();
+
 
 	}
 }

@@ -19,6 +19,7 @@ class Name_model extends CI_Model {
         
         $query = $this->db->get('login');
         return $query;
+        
     }
     function checkpwd($arr){
         if($arr['pw'] != $arr['pw2']){
@@ -93,6 +94,14 @@ class Name_model extends CI_Model {
         else{
             return false;
         }
+    }
+
+    function forgetpwd_emailcheck($arr){
+        $this->db->select('*');
+        $this->db->where('username',$arr['id']);
+        $query = $this->db->get('login');/*->result_array()['key'];*/
+        return $query;
+
     }
 
 
